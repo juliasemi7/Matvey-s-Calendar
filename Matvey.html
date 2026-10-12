@@ -32,6 +32,8 @@
             --pkg7-border: #0d9488;
             --pkg8-bg: rgba(224, 231, 255, 0.4);
             --pkg8-border: #4f46e5;
+            --pkg9-bg: rgba(251, 207, 232, 0.4);
+            --pkg9-border: #db2777;
         }
 
         * {
@@ -158,6 +160,7 @@
         .calendar td.pkg-6 { background-color: var(--pkg6-bg); }
         .calendar td.pkg-7 { background-color: var(--pkg7-bg); }
         .calendar td.pkg-8 { background-color: var(--pkg8-bg); }
+        .calendar td.pkg-9 { background-color: var(--pkg9-bg); }
 
         .calendar td.lesson {
             font-weight: 800;
@@ -172,6 +175,7 @@
         .calendar td.lesson.pkg-6 { --lesson-border: var(--pkg6-border); }
         .calendar td.lesson.pkg-7 { --lesson-border: var(--pkg7-border); }
         .calendar td.lesson.pkg-8 { --lesson-border: var(--pkg8-border); }
+        .calendar td.lesson.pkg-9 { --lesson-border: var(--pkg9-border); }
     </style>
 </head>
 <body>
@@ -253,6 +257,7 @@
         const pkg6Dates = generatePackageDates("2026-06-29", 20, { start: "2026-07-18", end: "2026-07-29" });
         const pkg7 = generatePackageDates("2026-08-10", 20);
         const pkg8 = generatePackageDates("2026-09-07", 20);
+        const pkg9 = generatePackageDates("2026-10-05", 20);
 
         function getLessonsForPackage(pkgDates) {
             let lessonDates = [];
@@ -275,6 +280,7 @@
         const lessons6 = getLessonsForPackage(pkg6Dates);
         const lessons7 = getLessonsForPackage(pkg7);
         const lessons8 = getLessonsForPackage(pkg8);
+        const lessons9 = getLessonsForPackage(pkg9);
 
         const allPackages = [
             { dates: pkg1, lessons: lessons1, cls: 'pkg-1' },
@@ -284,7 +290,8 @@
             { dates: pkg5, lessons: lessons5, cls: 'pkg-5' },
             { dates: pkg6Dates, lessons: lessons6, cls: 'pkg-6' },
             { dates: pkg7, lessons: lessons7, cls: 'pkg-7' },
-            { dates: pkg8, lessons: lessons8, cls: 'pkg-8' }
+            { dates: pkg8, lessons: lessons8, cls: 'pkg-8' },
+            { dates: pkg9, lessons: lessons9, cls: 'pkg-9' }
         ];
 
         function getDaysInMonth(y, m) { return new Date(y, m + 1, 0).getDate(); }
